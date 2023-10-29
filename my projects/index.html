@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card-container">
+            <div class="front">
+                <div class="img">
+                    <img src="./img/chip.png" alt="">
+                    <img src="./img/visa.png" alt="">
+                </div>
+                <div class="card-nuber-box">####################</div>
+                <div class="flexbox">
+                    <div class="box">
+                        <span>Card Holder</span>
+                        <div class="card-holder-name">Full Name</div>
+                    </div>
+
+                    <div class="box">
+                        <span>Expires</span>
+                        <div class="expiration">
+                            <span class="exp-month">mm</span>
+                            <span class="exp-year">yy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="stripe"></div>
+                <div class="box">
+                    <span>CVC</span>
+                    <div class="CVC-box"></div>
+                    <img src="./img/visa.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <form action="">
+            <div class="inputBox">
+                <span>Card Number</span>
+                <input type="text" maxlength="20" class="card-numbr-input">
+            </div>
+
+            <div class="inputBox">
+                <span>Card Holder</span>
+                <input type="text" class="card-holder-input">
+            </div>
+
+            <div class="flexbox">
+                <div class="inputBox">
+                    <span>Expire Month</span>
+                    <select name="" id="" class="month-input">
+                        <option value="Month" selected disabled>Month</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+
+                <div class="inputBox">
+                    <span>Expire Year</span>
+                    <select name="" id="" class="Year">
+                        <option value="Year" selected disabled>Year</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>CVC</span>
+                    <input type="text" maxlength="4" class="CVC-input">
+                </div>
+            </div>
+            <input type="submit" value="submit" class="submit-btn">
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+<script>
+    document.querySelector('.card-numbr-input').oninput = () =>{
+        document.querySelector('.card-nuber-box').innerText = document.querySelector('.card-numbr-input').value;
+    }
+
+
+
+    document.querySelector('.card-holder-input').oninput = () =>{
+        document.querySelector('.card-holder-name').innerText = document.querySelector('.card-holder-input').value;
+    }
+
+
+    document.querySelector('.month-input').oninput = () =>{
+        document.querySelector('.exp-month').innerText = document.querySelector('.month-input').value;
+    }
+
+
+    document.querySelector('.Year').oninput = () =>{
+        document.querySelector('.exp-year').innerText = document.querySelector('.Year').value;
+    }
+
+
+    document.querySelector('.CVC-input').onmouseenter = () =>{
+        document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(-180deg)';
+        document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(0deg)';
+    }
+
+
+    document.querySelector('.CVC-input').onmouseleave = () =>{
+        document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(0deg)';
+        document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(180deg)';
+    }
+
+
+    document.querySelector('.CVC-input').oninput = () =>{
+        document.querySelector('.CVC-box').innerText = document.querySelector('.CVC-input').value ;
+    }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
